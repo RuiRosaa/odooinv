@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="inventory_root"
+                  name="Inventory"
+                  sequence="10"/>
+
+    <menuitem id="menu_inventory_operations"
+                  name="Inventory Operations"
+                  parent="inventory_root"
+                  sequence="11"/>
+</odoo>
