@@ -1,0 +1,2 @@
+# odooinv
+Odoo internship project
