@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+    <record id="view_picking_form_inherited_delivery_team" model="ir.ui.view">
+        <field name="name">view.picking.form.inherited.delivery.team</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.stock_picking_batch_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group[2]" position="after">
+                <group>
+                    <field name="delivery_team"/>
+                </group>
+            </xpath>
+        </field>
+    </record>-->
+
+
+ <!--   <data>-->
+
+<!--        <record id="view_picking_form_inherited_delivery_team" model="ir.ui.view">-->
+<!--            <field name="name">view.picking.form.inherited.delivery.team</field>-->
+<!--            <field name="model">stock.picking</field>-->
+<!--            <field name="inherit_id" ref="stock.view_picking_type_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='company_id']" position="after">-->
+<!--                    <field name="delivery_team" string="My Custom Field"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="action_team_patient" model="ir.actions.act_window">
+            <field name="name">Team</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">delivery.team</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_teams"
+                  name="Teams"
+                  parent="menu_team_operations"
+                  action="action_team_patient"
+                  sequence="10"/>
+
+    <!--</data>-->
+</odoo>
