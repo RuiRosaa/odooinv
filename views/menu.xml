@@ -2,11 +2,11 @@
 
 <odoo>
     <menuitem id="menu_team_root"
-                  name="Delivery"
+                  name="Delivery Teams"
                   sequence="10"/>
 
     <menuitem id="menu_team_operations"
-                  name="Delivery Teams"
+                  name="Operations"
                   parent="menu_team_root"
                   sequence="11"/>
 </odoo>
