@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="delivery_team_tree" model="ir.ui.view">
+        <field name="name">delivery.team.tree</field>
+        <field name="model">delivery.team</field>
+        <field name="arch" type="xml">
+            <tree string="Delivery teams">
+                <field name="name"/>
+                    <field name="driver_id"/>
+                    <field name="vehicle_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="delivery_team_search" model="ir.ui.view">
+        <field name="name">delivery.team.search</field>
+        <field name="model">delivery.team</field>
+        <field name="arch" type="xml">
+            <search string="Delivery teams">
+                <field name="name"/>
+                    <field name="driver_id"/>
+                    <field name="vehicle_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="delivery_team_form" model="ir.ui.view">
+        <field name="name">delivery.team.form</field>
+        <field name="model">delivery.team</field>
+        <field name="arch" type="xml">
+            <form string="Tags">
+                <group>
+                    <field name="name"/>
+                    <field name="driver_id"/>
+                    <field name="vehicle_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+        <record id="delivery_team_kanban" model="ir.ui.view">
+        <field name="name">delivery.team.kanban</field>
+        <field name="model">delivery.team</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <ul>
+                                <li>
+                                    <strong>Team</strong>
+                                    <field name="name"/>
+                                </li>
+                                <li>
+                                    <strong>Driver</strong>
+                                    <field name="driver_id"/>
+                                </li>
+                                <li>
+                                    <strong>Vehicle</strong>
+                                    <field name="vehicle_id"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="delivery_teams_action">
+        <field name="name">Delivery teams</field>
+        <field name="res_model">delivery.team</field>
+        <field name="view_mode">tree,form,activity,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Delivery teams
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_delivery_teams_action"
+              action="odooinv.delivery_teams_action"
+              name="Delivery teams"
+              sequence="1"
+              parent="contacts.res_partner_menu_config"/>
+
+
+</odoo>

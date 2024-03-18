@@ -6,6 +6,10 @@
     'data': [
         'security/ir.model.access.csv',
         'views/delivery.xml',
-        'views/menu.xml'
+        'views/menu.xml',
+        'views/teams.xml',
+        'views/inventory.xml',
+        'views/drivers.xml',
+        'views/vehicles.xml'
     ]
 }

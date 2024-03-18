@@ -9,4 +9,16 @@
                   name="Operations"
                   parent="menu_team_root"
                   sequence="11"/>
+
+    <menuitem id="menu_driver"
+                  name="Drivers"
+                  parent="menu_team_operations"
+                  action="action_driver_new"
+                  sequence="10"/>
+
+    <menuitem id="menu_vehicle"
+                  name="Vehicles"
+                  parent="menu_team_operations"
+                  action="action_vehicle_new"
+                  sequence="15"/>
 </odoo>

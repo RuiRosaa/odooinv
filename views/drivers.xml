@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="delivery_driver_tree" model="ir.ui.view">
+        <field name="name">delivery.driver.tree</field>
+        <field name="model">delivery.driver</field>
+        <field name="arch" type="xml">
+            <tree string="Delivery Drivers">
+                <field name="name"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="delivery_driver_search" model="ir.ui.view">
+        <field name="name">delivery.driver.search</field>
+        <field name="model">delivery.driver</field>
+        <field name="arch" type="xml">
+            <search string="Delivery drivers">
+                <field name="name"/>
+                <field name="status"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_driver_form" model="ir.ui.view">
+        <field name="name">driver.form</field>
+        <field name="model">delivery.driver</field>
+        <field name="arch" type="xml">
+            <form string="Driver Information">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--<record id="delivery_driver_kanban" model="ir.ui.view">
+        <field name="name">delivery.driver.kanban</field>
+        <field name="model">delivery.driver</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <ul>
+                                <li>
+                                    <strong>Team</strong>
+                                    <field name="driver_id"/>
+                                </li>
+                                <li>
+                                    <strong>Driver</strong>
+                                    <field name="license_number"/>
+                                </li>
+                                <li>
+                                    <strong>Vehicle</strong>
+                                    <field name="vehicle_model"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>-->
+
+    <record model="ir.actions.act_window" id="view_driver_form_action">
+        <field name="name">Delivery Drivers</field>
+        <field name="res_model">delivery.driver</field>
+        <field name="view_mode">tree,form,activity,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Driver
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_view_driver_action"
+              action="odooinv.view_driver_form_action"
+              name="Delivery Driver"
+              sequence="1"
+              parent="contacts.res_partner_menu_config"/>
+
+
+    <record id="action_driver_new" model="ir.actions.act_window">
+        <field name="name">Driver</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">delivery.driver</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

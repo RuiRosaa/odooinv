@@ -1,44 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
-    <!--    <data>-->
-
-    <!--    <record id="view_picking_form_inherited_delivery_team" model="ir.ui.view">
-            <field name="name">view.picking.form.inherited.delivery.team</field>
-            <field name="model">stock.picking</field>
-            <field name="inherit_id" ref="stock.view_picking_type_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='company_id']" position="after">
-                    <field name="name" string="My Custom Field"/>
-                </xpath>
-            </field>
-        </record>-->
-    <!--     <record id="stock_picking_delivery_team" model="ir.ui.view">
-           <field name="name">stock.picking.delivery.team</field>
-           <field name="model">stock.picking.batch</field>
-           <field name="priority">25</field>
-           <field name="mode">primary</field>
-           <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
-           <field name="arch" type="xml">
-               <xpath expr="//tree" position="attributes">
-                   <attribute name="create">0</attribute>
-               </xpath>
-           </field>
-       </record>-->
-
-
-
     <record id="stock_picking_batch_form_inherited" model="ir.ui.view">
         <field name="name">stock.picking.batch.form.inherited</field>
         <field name="model">stock.picking.batch</field>
         <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='scheduled_date']" position="after">
+            <xpath expr="////group[field[@name='scheduled_date']]" position="after">
                 <group>
                     <label for="delivery_team_id" string="Delivery Team"/>
                     <div>
                         <field name="delivery_team_id"/>
+                    </div>
+                    <label for="customer_city" string="Costumer City"/>
+                    <div>
+                        <field name="customer_city"/>
                     </div>
                 </group>
             </xpath>
@@ -46,19 +22,34 @@
     </record>
 
 
+    <record id="stock_picking_batch_filter_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.batch.filter.inherit</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+            </xpath>
+            <field name="delivery_team_id" string="Delivery team"/>
+            <data>
+                <xpath expr="//group" position="inside">
+                    <filter string="Delivery Team" name="delivery_team" domain="[]" context="{'group_by': 'delivery_team_id'}"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
 
     <record id="action_team_new" model="ir.actions.act_window">
-        <field name="name">Batch Transfers</field>
+        <field name="name">Delivery Team</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">delivery.team</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="menu_teams"
-              name="Batch Transfers"
+              name="Teams"
               parent="menu_team_operations"
               action="action_team_new"
               sequence="10"/>
 
-    <!-- </data>-->
 </odoo>

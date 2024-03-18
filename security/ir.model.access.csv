@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 odooinv.access_delivery_team,access_delivery_team,odooinv.model_delivery_team,base.group_user,1,1,1,1
+odooinv.access_stock_pickingodoo,access_stock_pickingodoo,odooinv.model_stock_pickingodoo,base.group_user,1,1,1,1
+odooinv.access_delivery_driver,access_delivery_driver,odooinv.model_delivery_driver,base.group_user,1,1,1,1
+odooinv.access_delivery_vehicle,access_delivery_vehicle,odooinv.model_delivery_vehicle,base.group_user,1,1,1,1

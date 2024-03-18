@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="delivery_vehicle_tree" model="ir.ui.view">
+        <field name="name">delivery.vehicle.tree</field>
+        <field name="model">delivery.vehicle</field>
+        <field name="arch" type="xml">
+            <tree string="Delivery Vehicles">
+                <field name="name"/>
+                <field name="model"/>
+                <field name="license_plate"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="delivery_vehicle_search" model="ir.ui.view">
+        <field name="name">delivery.vehicle.search</field>
+        <field name="model">delivery.vehicle</field>
+        <field name="arch" type="xml">
+            <search string="Delivery Vehicles">
+                <field name="name"/>
+                <field name="model"/>
+                <field name="license_plate"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_vehicle_form" model="ir.ui.view">
+        <field name="name">vehicle.form</field>
+        <field name="model">delivery.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Information">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="model"/>
+                        <field name="license_plate"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="view_vehicle_form_action">
+        <field name="name">Delivery Vehicles</field>
+        <field name="res_model">delivery.vehicle</field>
+        <field name="view_mode">tree,form,activity,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Vehicle
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_view_vehicle_action"
+              action="odooinv.view_vehicle_form_action"
+              name="Delivery Vehicle"
+              sequence="1"
+              parent="contacts.res_partner_menu_config"/>
+
+        <record id="action_vehicle_new" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">delivery.vehicle</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>
