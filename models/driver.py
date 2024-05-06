@@ -10,4 +10,5 @@ class Driver(models.Model):
         ('active', 'Available'),
         ('inactive', 'Unavailable')
     ], string='Status', default='active')
-
+    driverlicensetype = fields.Char(string='License Type', required=True)
+    licensevalidity = fields.Date(string='License Validity')

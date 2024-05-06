@@ -12,10 +12,10 @@
                     <div>
                         <field name="delivery_team_id"/>
                     </div>
-                    <label for="customer_city" string="Costumer City"/>
+<!--                    <label for="customer_city" string="Costumer City"/>
                     <div>
                         <field name="customer_city"/>
-                    </div>
+                    </div>-->
                 </group>
             </xpath>
         </field>
@@ -39,17 +39,17 @@
     </record>
 
 
-    <record id="action_team_new" model="ir.actions.act_window">
+<!--    <record id="action_team_new" model="ir.actions.act_window">
         <field name="name">Delivery Team</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">delivery.team</field>
         <field name="view_mode">tree,form</field>
-    </record>
+    </record>-->
 
     <menuitem id="menu_teams"
               name="Teams"
               parent="menu_team_operations"
-              action="action_team_new"
+              action="delivery_teams_action"
               sequence="10"/>
 
 </odoo>

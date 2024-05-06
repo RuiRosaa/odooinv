@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="delivery_route_tree" model="ir.ui.view">
+        <field name="name">delivery.route.tree</field>
+        <field name="model">delivery.route</field>
+        <field name="arch" type="xml">
+            <tree string="Delivery Routes">
+                <field name="name"/>
+                <field name="city"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="delivery_route_search" model="ir.ui.view">
+        <field name="name">delivery.route.search</field>
+        <field name="model">delivery.route</field>
+        <field name="arch" type="xml">
+            <search string="Delivery Routes">
+                <field name="name"/>
+                <field name="city"/>
+            </search>
+        </field>
+    </record>
+
+        <record id="view_route_form" model="ir.ui.view">
+            <field name="name">route.form</field>
+            <field name="model">delivery.route</field>
+            <field name="arch" type="xml">
+                <form string="Route">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="city"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="view_route_form_action">
+            <field name="name">Delivery Routes</field>
+            <field name="res_model">delivery.route</field>
+            <field name="view_mode">tree,form,activity,kanban</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Route
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_view_route_action"
+                  action="odooinv.view_route_form_action"
+                  name="Delivery Route"
+                  sequence="1"
+                  parent="contacts.res_partner_menu_config"/>
+
+        <record id="action_route_new" model="ir.actions.act_window">
+            <field name="name">Routes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">delivery.route</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+</odoo>
+

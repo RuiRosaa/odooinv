@@ -9,6 +9,12 @@
                 <field name="name"/>
                 <field name="model"/>
                 <field name="license_plate"/>
+                <field name="km"/>
+                <field name="insurance"/>
+                <field name="endinsurance"/>
+                <field name="max_weight"/>
+                <field name="max_space"/>
+
             </tree>
         </field>
     </record>
@@ -21,6 +27,12 @@
                 <field name="name"/>
                 <field name="model"/>
                 <field name="license_plate"/>
+                <field name="km"/>
+                <field name="insurance"/>
+                <field name="endinsurance"/>
+                <field name="max_weight"/>
+                <field name="max_space"/>
+
             </search>
         </field>
     </record>
@@ -35,6 +47,12 @@
                         <field name="name"/>
                         <field name="model"/>
                         <field name="license_plate"/>
+                        <field name="km"/>
+                        <field name="insurance"/>
+                        <field name="endinsurance"/>
+                        <field name="max_weight"/>
+                        <field name="max_space"/>
+
                     </group>
                 </sheet>
             </form>

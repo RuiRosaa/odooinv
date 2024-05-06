@@ -3,3 +3,4 @@ odooinv.access_delivery_team,access_delivery_team,odooinv.model_delivery_team,ba
 odooinv.access_stock_pickingodoo,access_stock_pickingodoo,odooinv.model_stock_pickingodoo,base.group_user,1,1,1,1
 odooinv.access_delivery_driver,access_delivery_driver,odooinv.model_delivery_driver,base.group_user,1,1,1,1
 odooinv.access_delivery_vehicle,access_delivery_vehicle,odooinv.model_delivery_vehicle,base.group_user,1,1,1,1
+odooinv.access_delivery_route,access_delivery_route,odooinv.model_delivery_route,base.group_user,1,1,1,1

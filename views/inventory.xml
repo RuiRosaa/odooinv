@@ -8,11 +8,39 @@
         <field name="priority" eval="1000"/>
         <field name="arch" type="xml">
               <xpath expr="//field[@name='picking_type_id']" position="after">
-            <field name="customer_city" string="Customer City" />
+             <field name="partner_city" string="Customer City" readonly="1"/>
         </xpath>
 
         </field>
     </record>
+
+        <record id="deliveries_filter_inherit" model="ir.ui.view">
+        <field name="name">deliveries.filter.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+             <xpath expr="//search" position="inside">
+                <field name="partner_city" string="Customer City"/>
+             </xpath>
+<!--                <xpath expr="//group" position="inside">
+                    <filter string="Customer City" name="partner_city" domain="[]" context="{'group_by': 'partner_city'}"/>
+                </xpath>-->
+        </field>
+    </record>
+
+
+    <record id="view_inventory_form" model="ir.ui.view">
+    <field name="name">stock.picking.form</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="after">
+            <field name="delivery_team_id"/>
+        </xpath>
+    </field>
+</record>
+
+
 
 
     <record id="action_deliveries_new" model="ir.actions.act_window">

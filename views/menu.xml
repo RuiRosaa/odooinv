@@ -6,7 +6,7 @@
                   sequence="10"/>
 
     <menuitem id="menu_team_operations"
-                  name="Operations"
+                  name="Delivery Operations"
                   parent="menu_team_root"
                   sequence="11"/>
 
@@ -20,5 +20,11 @@
                   name="Vehicles"
                   parent="menu_team_operations"
                   action="action_vehicle_new"
+                  sequence="15"/>
+
+        <menuitem id="menu_route"
+                  name="Routes"
+                  parent="menu_team_operations"
+                  action="action_route_new"
                   sequence="15"/>
 </odoo>
